@@ -7,14 +7,14 @@ while(posicionArregloOrdenar<tamanio)
 {
 
     if(arregloParaOrdenar[posicionArregloOrdenar]==posicionArregloContadores){
-            cout<<posicionArregloContadores<<"cont"<<arregloParaOrdenar[posicionArregloOrdenar]<<endl;
+          //  cout<<posicionArregloContadores<<"cont"<<arregloParaOrdenar[posicionArregloOrdenar]<<endl;
 
         arregloContadores[posicionArregloContadores]++;
          posicionArregloOrdenar++;
          posicionArregloContadores=0;
     }
     else{
-             cout<<posicionArregloContadores<<"cont"<<arregloParaOrdenar[posicionArregloOrdenar]<<endl;
+             //cout<<posicionArregloContadores<<"cont"<<arregloParaOrdenar[posicionArregloOrdenar]<<endl;
         return OrdenamientoContando(arregloParaOrdenar,arregloContadores,tamanio,posicionArregloOrdenar,posicionArregloContadores+1);
     }
 
@@ -25,7 +25,7 @@ while(posicionArregloOrdenar<tamanio)
 
 
 void imprimir(int arregloContadores[],int posicionArregloContadores){
-    for(int i=0;i<100;i++){
+    for(int i=0;i<10001;i++){
         if(arregloContadores[i]!=0){
             for(int k=0;k<arregloContadores[i];k++){
             cout<<i;
@@ -38,16 +38,16 @@ void imprimir(int arregloContadores[],int posicionArregloContadores){
 int main()
 {
     int tamanio,numero,posicionArregloOrdenar=0,posicionArregloContadores=0;
-    cout << "Ingrese el tamaño del arreglo" << endl;
+    cout << "Ingrese el tamaÃ±o del arreglo" << endl;
        cin>>tamanio;
        int arregloParaOrdenar[tamanio];
-       int arregloContadores[100];
+       int arregloContadores[10001];
        for(int j=0;j<tamanio;j++){
 
-        arregloParaOrdenar[j]=rand()%1000000;
+        arregloParaOrdenar[j]=rand()%10000;
 
     }
-for(int i=0;i<100;i++){
+for(int i=0;i<10001;i++){
       arregloContadores[i]=0;
 }
 
@@ -61,4 +61,4 @@ imprimir(arregloContadores,posicionArregloContadores);
 endTime=std::clock( );
     ellapsedSeconds=double(endTime-startTime)/double(CLOCKS_PER_SEC);
    cout <<"Tiempo que tardo:"<<ellapsedSeconds<<"seg"<<endl;
- }
+}
